@@ -30,7 +30,9 @@ contract BoxV2 is
         return 2;
     }
 
-    function setNumber(uint256 _number) external {}
+    function setNumber(uint256 _number) external {
+        number = _number;
+    }
 
-    function _authorizeUpgrade(address newImplementation) internal override onlyOwner {}
+    function _authorizeUpgrade(address newImplementation) internal override {}
 }

@@ -16,7 +16,7 @@ contract UpgradeBox is Script {
         return proxy;
     }
 
-    function upgradeBox(address proxyAddress, address newImplementation) internal returns (address) {
+    function upgradeBox(address proxyAddress, address newImplementation) public returns (address) {
         vm.startBroadcast();
         BoxV1 proxy = BoxV1(proxyAddress);
         proxy.upgradeTo(newImplementation); // proxy contract now points to new address
